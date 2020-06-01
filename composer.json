@@ -9,7 +9,6 @@
 
     "name": "sparav/identityprotection",
     "description": "IdentityProtection",
-    "type": "composer-plugin",
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
