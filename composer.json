@@ -2,17 +2,12 @@
 
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Sparav\\identityprotection\\": "src"
+            "Sparav\\IdentityProtection\\": "src"
         }
     },
-
     "name": "sparav/identityprotection",
-    "description": "IdentityProtection",
+    "description": "Sparav Customer Api",
+    "type": "MIT",
     "license": "MIT",
-    "minimum-stability": "dev",
-    "require": {
-        "guzzlehttp/guzzle": "^6.5"
-    }
-
+    "minimum-stability": "stable"
 }
