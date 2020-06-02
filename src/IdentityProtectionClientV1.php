@@ -1,9 +1,11 @@
 <?php
 
+
 namespace Sparav\IdentityProtection;
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+
 
 class IdentityProtectionClientV1
 {
@@ -33,5 +35,6 @@ class IdentityProtectionClientV1
             ->get("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/user/email/{$user_id}");
         return $response;
     }
+
 
 }
