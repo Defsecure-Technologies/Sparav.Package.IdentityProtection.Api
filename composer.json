@@ -1,13 +1,8 @@
 {
-
-    "autoload": {
-        "psr-4": {
-            "Sparav\\IdentityProtection\\": "src"
-        }
-    },
     "name": "sparav/identityprotection",
-    "description": "Sparav Customer Api",
-    "type": "MIT",
+    "description": "sparavidentity",
+    "type": "project",
     "license": "MIT",
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "require": {}
 }
