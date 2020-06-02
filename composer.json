@@ -1,7 +1,15 @@
 {
+
+
+    "autoload": {
+        "psr-4": {
+            "Sparav\\IdentityProtection\\": "src/"
+        }
+    },
+
     "name": "sparav/identityprotection",
     "description": "sparavidentity",
-    "type": "project",
+    "type": "MIT",
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {}
