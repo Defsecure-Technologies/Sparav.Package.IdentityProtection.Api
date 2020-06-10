@@ -1,11 +1,9 @@
 <?php
 
-
 namespace Sparav\IdentityProtection;
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-
 
 class IdentityProtectionClientV1
 {
@@ -36,5 +34,15 @@ class IdentityProtectionClientV1
         return $response;
     }
 
+    /**
+     * Deletes an identity by the given ID.
+     * @param int $identity_id
+     * @return Response
+     */
+    public function deleteIdentity(int $identity_id) {
+        $response = Http::timeout(15)
+            ->delete("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/email/{$identity_id}");
+        return $response;
+    }
 
 }
