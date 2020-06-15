@@ -41,7 +41,7 @@ class IdentityProtectionClientV1
      */
     public function deleteIdentity(int $identity_id) {
         $response = Http::timeout(15)
-            ->delete("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/email/{$identity_id}");
+            ->delete("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/email/delete/{$identity_id}");
         return $response;
     }
 
