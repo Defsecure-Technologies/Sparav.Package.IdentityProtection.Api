@@ -45,4 +45,15 @@ class IdentityProtectionClientV1
         return $response;
     }
 
+    /**
+     * Sets breached email status to 0, meaning user has dismissed it
+     * @param int $breach_id
+     * @return Response
+     */
+    public function deleteBreachedEmail(int $breach_id) {
+        $response = Http::timeout(15)
+            ->post("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/user/email/dismiss/{$breach_id}");
+        return $response;
+    }
+
 }
