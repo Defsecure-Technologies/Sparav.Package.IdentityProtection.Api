@@ -56,4 +56,14 @@ class IdentityProtectionClientV1
         return $response;
     }
 
+    /**
+     * Returns breached mails with details for a user.
+     * @param int $user_id
+     * @return Response
+     */
+    public function breachedEmailsDetails(string $email) {
+        $response = Http::timeout(15)
+            ->get("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/emaildetails/{$email}");
+        return $response;
+    }
 }
