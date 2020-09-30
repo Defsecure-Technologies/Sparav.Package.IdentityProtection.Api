@@ -15,7 +15,7 @@ class IdentityProtectionClientV1
      */
     public function addIdentity(string $email, int $user_id)
     {
-        $response = Http::timeout(15)
+        $response = Http::timeout(30)
             ->post('http://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/email', [
                 'email' => $email,
                 'user_id' => $user_id,
