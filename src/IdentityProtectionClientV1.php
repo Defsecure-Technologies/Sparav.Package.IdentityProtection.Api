@@ -4,6 +4,7 @@ namespace Sparav\IdentityProtection;
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
+use Sparav\IdentityProtection\Models\EmailIdentityProtection;
 
 class IdentityProtectionClientV1
 {
@@ -15,7 +16,7 @@ class IdentityProtectionClientV1
      */
     public function addIdentity(string $email, int $user_id)
     {
-        $response = Http::timeout(30)
+        $response = Http::timeout(15)
             ->post('http://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/email', [
                 'email' => $email,
                 'user_id' => $user_id,
@@ -31,6 +32,17 @@ class IdentityProtectionClientV1
     public function breachedEmails(int $user_id) {
         $response = Http::timeout(15)
             ->get("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/user/email/{$user_id}");
+        return $response;
+    }
+
+    /**
+     * Returns breached mails for a user.
+     * @param EmailIdentityProtection $emailIdentityProtection
+     * @return Response
+     */
+    public function patch(EmailIdentityProtection $emailIdentityProtection) {
+        $response = Http::timeout(15)
+            ->patch("https://sparavidentityprotectionapiprod.azurewebsites.net/api/v1/updateemailidentity", (array) $emailIdentityProtection);
         return $response;
     }
 
@@ -58,7 +70,7 @@ class IdentityProtectionClientV1
 
     /**
      * Returns breached mails with details for a user.
-     * @param int $user_id
+     * @param string $email
      * @return Response
      */
     public function breachedEmailsDetails(string $email) {
